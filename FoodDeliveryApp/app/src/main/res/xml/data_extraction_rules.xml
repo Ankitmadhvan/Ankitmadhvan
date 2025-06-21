@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <cloud-backup disableIfNoEncryptionCapabilities="true">
+        <!-- TODO: Remove schemaLocation if not using schema. -->
+        <include
+            domain="sharedpref"
+            path="."
+            requireFlags="clientSideEncryption"
+            tools:ignore="FullBackupContentUsage"
+            xmlns:tools="http://schemas.android.com/tools" />
+        <!-- Exclude specific shared preferences that contain sensitive data. -->
+        <!-- <exclude domain="sharedpref" path="device.xml"/> -->
+    </cloud-backup>
+    <device-transfer>
+        <include
+            domain="sharedpref"
+            path="."
+            requireFlags="clientSideEncryption"
+            tools:ignore="FullBackupContentUsage"
+            xmlns:tools="http://schemas.android.com/tools" />
+        <!-- <exclude domain="sharedpref" path="device.xml"/> -->
+    </device-transfer>
+</data-extraction-rules>
